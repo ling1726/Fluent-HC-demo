@@ -1,24 +1,53 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import "./App.css";
+import { ConvergedDemo } from "./ConvergedDemo";
+import { NorthstarDemo } from "./NorthstarDemo";
+
+const getForcedFromLocalStorage = () => {
+  return window.localStorage.getItem("forced") === "true";
+};
+
+const setForcedToLocalStorage = (forced: boolean) => {
+  return window.localStorage.setItem("forced", forced.toString());
+};
 
 function App() {
+  const [forced, setForced] = React.useState(() => getForcedFromLocalStorage());
+
+  React.useMemo(() => {
+    if (forced) {
+      // @ts-ignore
+      document.documentElement.style["forced-color-adjust"] = "unset";
+    } else {
+      // @ts-ignore
+      document.documentElement.style["forced-color-adjust"] = "none";
+    }
+  }, [forced]);
+
+  const onChange = () => {
+    setForced((s) => {
+      const newState = !s;
+      setForcedToLocalStorage(newState);
+      return newState;
+    });
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Fluent high contrast demo</h1>
+      <label htmlFor="forced" style={{display: 'flex', alignItems: 'center', gap: 20}}>
+        Use forced windows high contrast mode
+        <input
+          id="forced"
+          type="checkbox"
+          onChange={onChange}
+          checked={forced}
+        />
+      </label>
+      <h2>Fluent UI northstar</h2>
+      <NorthstarDemo forced={forced} />
+      <h2>Fluent UI v9</h2>
+      <ConvergedDemo forced={forced} />
     </div>
   );
 }

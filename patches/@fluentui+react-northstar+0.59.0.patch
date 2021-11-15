@@ -1,0 +1,24 @@
+diff --git a/node_modules/@fluentui/react-northstar/dist/es/index.d.ts b/node_modules/@fluentui/react-northstar/dist/es/index.d.ts
+index 41d773d..31c61a0 100644
+--- a/node_modules/@fluentui/react-northstar/dist/es/index.d.ts
++++ b/node_modules/@fluentui/react-northstar/dist/es/index.d.ts
+@@ -8,6 +8,7 @@ export { teamsDarkTheme } from './themes/teams-dark';
+ export { teamsHighContrastTheme } from './themes/teams-high-contrast';
+ export { teamsV2Theme } from './themes/teams-v2';
+ export { teamsDarkV2Theme } from './themes/teams-dark-v2';
++export { systemColorsTheme } from './themes/system-colors';
+ export * from './themes/types';
+ export * from './themes/colorUtils';
+ export * from './themes/teams/types';
+diff --git a/node_modules/@fluentui/react-northstar/dist/es/index.js b/node_modules/@fluentui/react-northstar/dist/es/index.js
+index a54234d..5359c10 100644
+--- a/node_modules/@fluentui/react-northstar/dist/es/index.js
++++ b/node_modules/@fluentui/react-northstar/dist/es/index.js
+@@ -11,6 +11,7 @@ export { teamsDarkTheme } from './themes/teams-dark';
+ export { teamsHighContrastTheme } from './themes/teams-high-contrast';
+ export { teamsV2Theme } from './themes/teams-v2';
+ export { teamsDarkV2Theme } from './themes/teams-dark-v2';
++export { systemColorsTheme } from './themes/system-colors';
+ export * from './themes/types';
+ export * from './themes/colorUtils'; //
+ // Teams theme
