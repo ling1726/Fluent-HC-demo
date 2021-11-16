@@ -21,7 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "postinstall": "patch-package && yarn copy-system-theme",
-    "copy-system-theme": "copyfiles -u 2 \"src/northstar-system-colors/*\" node_modules/@fluentui/react-northstar/dist/es/themes/system-colors",
+    "copy-system-theme": "copyfiles -u 1 \"src/system-colors/**\" node_modules/@fluentui/react-northstar/dist/es/themes",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

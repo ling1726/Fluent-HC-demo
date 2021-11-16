@@ -1,0 +1,1 @@
+Northstar system colors theme based on [microsoft/fluentui#20284](https://github.com/microsoft/fluentui/pull/20284)
