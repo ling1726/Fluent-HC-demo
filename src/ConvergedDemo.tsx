@@ -57,12 +57,13 @@ export const ConvergedDemo: React.FC<{ forced: boolean }> = ({ forced }) =>  {
 
   // These classes should only be applied in forced HC
   // until prefers-contrast: forced media query becomes a thing
-  const menuItemClass = forced ? styles.menuItem : '';
+  // const menuItemClass = forced ? styles.menuItem : '';
+  const menuItemClass = styles.menuItem;
   return (
     <FluentProvider theme={theme} style={{ padding: 48 }}>
       <Button>Native button</Button>
       <Button className={styles.primaryButton} appearance="primary">
-        Native primary button
+        Primary button
       </Button>
       <Menu>
         <MenuTrigger>
@@ -77,6 +78,8 @@ export const ConvergedDemo: React.FC<{ forced: boolean }> = ({ forced }) =>  {
           </MenuList>
         </MenuPopover>
       </Menu>
+
+      <div style={{color: 'Canvas', background: 'CanvasText'}} >This should be HC goood</div>
     </FluentProvider>
   );
 }

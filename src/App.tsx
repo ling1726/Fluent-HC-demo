@@ -2,6 +2,7 @@ import * as React from "react";
 import "./App.css";
 import { ConvergedDemo } from "./ConvergedDemo";
 import { NorthstarDemo } from "./NorthstarDemo";
+import { ForcedColorAdjustDemo } from "./ForcedColorAdjustDemo";
 
 const getForcedFromLocalStorage = () => {
   return window.localStorage.getItem("forced") === "true";
@@ -48,6 +49,8 @@ function App() {
       <NorthstarDemo forced={forced} />
       <h2>Fluent UI v9</h2>
       <ConvergedDemo forced={forced} />
+      <h2>Forced colors adjust: none override fail</h2>
+      <ForcedColorAdjustDemo forced={forced} />
     </div>
   );
 }
